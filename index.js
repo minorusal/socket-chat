@@ -3,6 +3,7 @@
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
+const cors = require('cors');
 const { escucharSockets } = require('./utils/server');
 
 const app = express();
