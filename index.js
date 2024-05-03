@@ -10,8 +10,8 @@ app.use(cors({ origin: true, credentials: true }));
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"] // Permitir todos los métodos
+    origin: ["http://localhost:4200", "https://dev.credibusiness.io"], // Permitir solo estos dos orígenes
+    methods: ["GET", "POST", "PUT", "DELETE"]
   }
 });
 
