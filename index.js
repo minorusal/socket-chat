@@ -6,11 +6,12 @@ const { Server } = require('socket.io');
 const { escucharSockets } = require('./utils/server');
 
 const app = express();
+app.use(cors({ origin: true, credentials: true }));
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
-    methods: ["GET", "POST"]
+    methods: ["GET", "POST", "PUT", "DELETE"] // Permitir todos los métodos
   }
 });
 
